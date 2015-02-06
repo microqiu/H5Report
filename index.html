@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="background: black;height:100%;width:100%;margin:0">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <script src="report.js"></script>
+</head>
+<body style="height:100%;width:100%;margin:0">
+    <canvas id="report"></canvas>
+</body>
+
+<script>
+    $(document).ready(function(){
+        var report = $("#report").report({
+            keys:["2-1","2-2","2-3","2-4","2-5","2-6","2-7"],
+            values:[10, 25, 30,20,17,28,5],
+            title:"小秋测试画图程序",
+            type:1
+        });
+        var  i = 0;
+        var ii = 0;
+        setInterval(function(){
+            report.setOption(
+                {
+                    keys:["2-1","2-2","2-3","2-4","2-5","2-6","2-7"],
+                    values:[10 + i, 25 + i, 30 + ii,20 + i,17 + i,28 + ii,5 + i],
+                    title:"小秋测试画图程序",
+                    type:1
+                }
+            );
+            i++;
+            ii+=5;
+        },1000);
+
+    });
+</script>
+
+</html>
